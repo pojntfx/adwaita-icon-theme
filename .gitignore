@@ -18,7 +18,7 @@
 /Makefile.in
 /TAGS
 /aclocal.m4
-/adwaita-icon-theme.pc
+/adwaita-icon-theme-ubuntu.pc
 /autom4te.cache
 /config.cache
 /config.guess
@@ -42,3 +42,7 @@
 /so_locations
 /stamp-h1
 /tags
+
+# Start of custom edits
+/m4
+/output

@@ -26,13 +26,13 @@ PREFIX=$(SRCROOTDIR)\..\vs$(VSVER)\$(PLAT)
 ERRNUL  = 2>NUL
 _HASH=^#
 NULL=
-ICON_SUBDIR=share\icons\Adwaita
+ICON_SUBDIR=share\icons\Adwaita-Ubuntu
 GDK_PIXBUF_MOD_VERSION=2.10.0
 ADWAITA_VERSION=3.27.90
-ADWAITA_PC_FILES=adwaita-icon-theme.pc
+ADWAITA_PC_FILES=adwaita-icon-theme-ubuntu.pc
 
 # Generate the NMake Makefile modules for the listing of subdirs for each icon size
-!if [@for /f %s in ('dir /b /on $(SRCROOTDIR)\Adwaita') do @if not "%s" == "cursors" (@echo SIZE_%s_dirs = \> %s.mak) & (@for /f %d in ('dir /b $(SRCROOTDIR)\Adwaita\%s') do @echo %s/%d \>> %s.mak) & @echo ^$(NULL) >> %s.mak]
+!if [@for /f %s in ('dir /b /on $(SRCROOTDIR)\Adwaita-Ubuntu') do @if not "%s" == "cursors" (@echo SIZE_%s_dirs = \> %s.mak) & (@for /f %d in ('dir /b $(SRCROOTDIR)\Adwaita-Ubuntu\%s') do @echo %s/%d \>> %s.mak) & @echo ^$(NULL) >> %s.mak]
 !endif
 
 # We want underscores instead of dashes in the Makefile varnames
@@ -56,7 +56,7 @@ ADWAITA_PC_FILES=adwaita-icon-theme.pc
 !include scalable.mak
 !include scalable-up-to-32.mak
 
-!if [@for /f %s in ('dir /b /on $(SRCROOTDIR)\Adwaita') do @if not "%s" == "cursors" del %s.mak]
+!if [@for /f %s in ('dir /b /on $(SRCROOTDIR)\Adwaita-Ubuntu') do @if not "%s" == "cursors" del %s.mak]
 !endif
 
 FIXED_ICON_DIRS = \
@@ -132,14 +132,14 @@ index.theme.tmp: $(SRCROOTDIR)\index.theme.in dir_list.py
 	@$(PYTHON) apply_dirs.py -i=$(SRCROOTDIR)\$(@B).in -o=$@
 
 dir_list.py:
-#	Generate a Python list of subdirs under Adwaita/ for the icons
+#	Generate a Python list of subdirs under Adwaita-Ubuntu/ for the icons
 	@echo icon_dirs = [>$@
 	@for %d in ($(FIXED_ICON_DIRS) $(SIZE_256x256_dirs) $(SIZE_scalable_dirs) $(SIZE_scalable_up_to_32_dirs)) do @echo '%d',>>$@
 	@echo ]>>$@
 
 .SUFFIXES: .svg .png
 
-$(ADWAITA_PC_FILES): ..\adwaita-icon-theme.pc.in
+$(ADWAITA_PC_FILES): ..\adwaita-icon-theme-ubuntu.pc.in
 	@echo Generating $@...
 	$(PYTHON) adwaitapc.py --prefix=$(PREFIX) --version=$(ADWAITA_VERSION)
 
@@ -149,35 +149,35 @@ $(ADWAITA_PC_FILES): ..\adwaita-icon-theme.pc.in
 install: index.theme $(ADWAITA_PC_FILES)
 	@-mkdir $(PREFIX)\$(ICON_SUBDIR)
 	copy index.theme $(PREFIX)\$(ICON_SUBDIR)
-	for /f %d in ('dir /b $(SRCROOTDIR)\Adwaita') do								\
+	for /f %d in ('dir /b $(SRCROOTDIR)\Adwaita-Ubuntu') do								\
 	@(echo Copying files for %d...) & 										\
 	@(mkdir $(PREFIX)\$(ICON_SUBDIR)\%d) & 										\
 	@(if not "%d" == "cursors"											\
-		(for /f %f in ('dir /b /on $(SRCROOTDIR)\Adwaita\%d') do						\
+		(for /f %f in ('dir /b /on $(SRCROOTDIR)\Adwaita-Ubuntu\%d') do						\
 		 (mkdir $(PREFIX)\$(ICON_SUBDIR)\%d\%f) &								\
-		 (copy /b $(SRCROOTDIR)\Adwaita\%d\%f\* $(PREFIX)\$(ICON_SUBDIR)\%d\%f))				\
-	  else (copy /b $(SRCROOTDIR)\Adwaita\%d\* $(PREFIX)\$(ICON_SUBDIR)\%d))
+		 (copy /b $(SRCROOTDIR)\Adwaita-Ubuntu\%d\%f\* $(PREFIX)\$(ICON_SUBDIR)\%d\%f))				\
+	  else (copy /b $(SRCROOTDIR)\Adwaita-Ubuntu\%d\* $(PREFIX)\$(ICON_SUBDIR)\%d))
 	@if exist $(PREFIX)\bin\gtk-encode-symbolic-svg.exe								\
 	if exist $(PREFIX)\lib\gdk-pixbuf-2.0\$(GDK_PIXBUF_MOD_VERSION)\loaders\libpixbufloader-svg.dll			\
 	if exist $(PREFIX)\lib\gdk-pixbuf-2.0\$(GDK_PIXBUF_MOD_VERSION)\loaders.cache 					\
 		@(echo Converting symbolic SVG icons to PNG...) &							\
 		@(for %z in (16x16 24x24 32x32 48x48 64x64 96x96) do							\
 			@(echo Converting symbolic SVG icons to %z PNG...) &						\
-			@(for /f %d in ('dir /b /on $(SRCROOTDIR)\Adwaita\scalable') do					\
-				@(for /f %f in ('dir /b /on $(SRCROOTDIR)\Adwaita\scalable\%d') do			\
-					@($(PREFIX)\bin\gtk-encode-symbolic-svg $(SRCROOTDIR)\Adwaita\scalable\%d\%f	\
+			@(for /f %d in ('dir /b /on $(SRCROOTDIR)\Adwaita-Ubuntu\scalable') do					\
+				@(for /f %f in ('dir /b /on $(SRCROOTDIR)\Adwaita-Ubuntu\scalable\%d') do			\
+					@($(PREFIX)\bin\gtk-encode-symbolic-svg $(SRCROOTDIR)\Adwaita-Ubuntu\scalable\%d\%f	\
 					 %z -o $(PREFIX)\$(ICON_SUBDIR)\%z\%d))))
 	if not exist $(PREFIX)\share\pkgconfig mkdir $(PREFIX)\share\pkgconfig
-	copy adwaita-icon-theme.pc $(PREFIX)\share\pkgconfig
+	copy adwaita-icon-theme-ubuntu.pc $(PREFIX)\share\pkgconfig
 	@if exist $(PREFIX)\bin\gtk-update-icon-cache.exe 								\
 	@(echo Update icon cache...) &											\
 	@($(PREFIX)\bin\gtk-update-icon-cache -q $(PREFIX)\$(ICON_SUBDIR))
-	@echo Adwaita icon theme install complete.
+	@echo Adwaita-Ubuntu icon theme install complete.
 
 clean:
 	@-del index.theme
 	@-del index.theme.tmp
 	@-del dir_list.py
-	@-del adwaita-icon-theme.pc
+	@-del adwaita-icon-theme-ubuntu.pc
 	@-for %a in (*.pyc) do @del *.pyc
 	@-if exist __pycache__ rmdir /s /q __pycache__

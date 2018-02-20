@@ -18,9 +18,9 @@ def main(argv):
 
     base_pc.setup(argv)
 
-    # Generate adwaita-icon-theme.pc
-    replace_multi(base_pc.top_srcdir + '/adwaita-icon-theme.pc.in',
-                  base_pc.srcdir + '/adwaita-icon-theme.pc',
+    # Generate adwaita-icon-theme-ubuntu.pc
+    replace_multi(base_pc.top_srcdir + '/adwaita-icon-theme-ubuntu.pc.in',
+                  base_pc.srcdir + '/adwaita-icon-theme-ubuntu.pc',
                   base_pc.base_replace_items)
 
 if __name__ == '__main__':

@@ -4,7 +4,7 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="adwaita-icon-theme"
+PKG_NAME="adwaita-icon-theme-ubuntu"
 REQUIRED_AUTOMAKE_VERSION=1.9
 
 (test -f $srcdir/configure.ac \

@@ -24,7 +24,7 @@
    style="display:inline;enable-background:new"
    viewBox="0 0 1360 560">
   <title
-     id="title4162">Adwaita Icon</title>
+     id="title4162">Adwaita-Ubuntu Icon</title>
   <defs
      id="defs3">
     <linearGradient
@@ -1039,7 +1039,7 @@
         <dc:source>http://samuelhewitt.com/</dc:source>
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
-        <dc:title>Adwaita Icon</dc:title>
+        <dc:title>Adwaita-Ubuntu Icon</dc:title>
         <dc:subject>
           <rdf:Bag />
         </dc:subject>

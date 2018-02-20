@@ -1,8 +1,8 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.53)
 
-AC_INIT([adwaita-icon-theme], [3.27.90],
-        [http://bugzilla.gnome.org/enter_bug.cgi?product=adwaita-icon-theme])
+AC_INIT([adwaita-icon-theme-ubuntu], [3.27.90],
+        [http://bugzilla.gnome.org/enter_bug.cgi?product=adwaita-icon-theme-ubuntu])
 AC_CANONICAL_HOST
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([index.theme.in])
@@ -18,10 +18,10 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
 # Define the toplevel path here
-AC_SUBST(themedir, "\${datadir}/icons/Adwaita")
+AC_SUBST(themedir, "\${datadir}/icons/Adwaita-Ubuntu")
 
 # Input and Output dirs for the rendering
-AC_SUBST(SVGOUTDIR, "Adwaita")
+AC_SUBST(SVGOUTDIR, "Adwaita-Ubuntu")
 AC_SUBST(SVGSRCDIR, "src/symbolic")
 
 # Icon sizes we want to install
@@ -80,7 +80,7 @@ AM_CONDITIONAL([ENABLE_L_XL_VARIANTS], [test x$enable_l_xl_variants = xyes])
 
 AC_CONFIG_FILES([
 Makefile
-adwaita-icon-theme.pc
+adwaita-icon-theme-ubuntu.pc
 src/Makefile
 src/fullcolor/Makefile
 src/symbolic/Makefile

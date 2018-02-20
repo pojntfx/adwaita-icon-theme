@@ -69,10 +69,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/adwaita-icon-theme
-pkgincludedir = $(includedir)/adwaita-icon-theme
-pkglibdir = $(libdir)/adwaita-icon-theme
-pkglibexecdir = $(libexecdir)/adwaita-icon-theme
+pkgdatadir = $(datadir)/adwaita-icon-theme-ubuntu
+pkgincludedir = $(includedir)/adwaita-icon-theme-ubuntu
+pkglibdir = $(libdir)/adwaita-icon-theme-ubuntu
+pkglibexecdir = $(libexecdir)/adwaita-icon-theme-ubuntu
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -127,11 +127,11 @@ AUTOHEADER = ${SHELL} /home/pojntfx/adwaita-icon-theme/missing autoheader
 AUTOMAKE = ${SHELL} /home/pojntfx/adwaita-icon-theme/missing automake-1.15
 AWK = gawk
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"adwaita-icon-theme\" -DPACKAGE_TARNAME=\"adwaita-icon-theme\" -DPACKAGE_VERSION=\"3.27.90\" -DPACKAGE_STRING=\"adwaita-icon-theme\ 3.27.90\" -DPACKAGE_BUGREPORT=\"http://bugzilla.gnome.org/enter_bug.cgi\?product=adwaita-icon-theme\" -DPACKAGE_URL=\"\" -DPACKAGE=\"adwaita-icon-theme\" -DVERSION=\"3.27.90\"
+DEFS = -DPACKAGE_NAME=\"adwaita-icon-theme-ubuntu\" -DPACKAGE_TARNAME=\"adwaita-icon-theme-ubuntu\" -DPACKAGE_VERSION=\"3.27.90\" -DPACKAGE_STRING=\"adwaita-icon-theme-ubuntu\ 3.27.90\" -DPACKAGE_BUGREPORT=\"http://bugzilla.gnome.org/enter_bug.cgi\?product=adwaita-icon-theme-ubuntu\" -DPACKAGE_URL=\"\" -DPACKAGE=\"adwaita-icon-theme-ubuntu\" -DVERSION=\"3.27.90\"
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
-GETTEXT_PACKAGE = adwaita-icon-theme
+GETTEXT_PACKAGE = adwaita-icon-theme-ubuntu
 GIT = /usr/bin/git
 GTK_ENCODE_SYMBOLIC_SVG = /usr/bin/gtk-encode-symbolic-svg
 GTK_UPDATE_ICON_CACHE = /usr/bin/gtk-update-icon-cache
@@ -148,11 +148,11 @@ LN_S = ln -s
 LTLIBOBJS = 
 MAKEINFO = ${SHELL} /home/pojntfx/adwaita-icon-theme/missing makeinfo
 MKDIR_P = /bin/mkdir -p
-PACKAGE = adwaita-icon-theme
-PACKAGE_BUGREPORT = http://bugzilla.gnome.org/enter_bug.cgi?product=adwaita-icon-theme
-PACKAGE_NAME = adwaita-icon-theme
-PACKAGE_STRING = adwaita-icon-theme 3.27.90
-PACKAGE_TARNAME = adwaita-icon-theme
+PACKAGE = adwaita-icon-theme-ubuntu
+PACKAGE_BUGREPORT = http://bugzilla.gnome.org/enter_bug.cgi?product=adwaita-icon-theme-ubuntu
+PACKAGE_NAME = adwaita-icon-theme-ubuntu
+PACKAGE_STRING = adwaita-icon-theme-ubuntu 3.27.90
+PACKAGE_TARNAME = adwaita-icon-theme-ubuntu
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.27.90
 PATH_SEPARATOR = :
@@ -162,7 +162,7 @@ PKG_CONFIG_PATH =
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = 
-SVGOUTDIR = Adwaita
+SVGOUTDIR = Adwaita-Ubuntu
 SVGSRCDIR = src/symbolic
 VERSION = 3.27.90
 abs_builddir = /home/pojntfx/adwaita-icon-theme/win32
@@ -216,7 +216,7 @@ symbolic_encode_sizes = 16x16 24x24 32x32 48x48 64x64 96x96
 symbolic_render_sizes = 
 sysconfdir = ${prefix}/etc
 target_alias = 
-themedir = ${datadir}/icons/Adwaita
+themedir = ${datadir}/icons/Adwaita-Ubuntu
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..

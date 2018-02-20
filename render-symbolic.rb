@@ -8,7 +8,7 @@ include REXML
 INKSCAPE = 'flatpak run org.inkscape.Inkscape'
 #INKSCAPE = '/usr/bin/inkscape' # like this works for me, while using `which` inkscape hangs
 SRC = "src/symbolic/gnome-stencils.svg"
-PREFIX = "Adwaita/scalable"
+PREFIX = "Adwaita-Ubuntu/scalable"
 
 def chopSVG(icon)
 	FileUtils.mkdir_p(icon[:dir]) unless File.exists?(icon[:dir])

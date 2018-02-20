@@ -10510,7 +10510,7 @@
            y="338"
            x="207"
            id="tspan17932"
-           sodipodi:role="line">Adwaita</tspan></text>
+           sodipodi:role="line">Adwaita-Ubuntu</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text18752"
@@ -16922,7 +16922,7 @@
        width="24"
        id="context-menu"
        style="color:#000000;display:block;overflow:visible;visibility:visible;opacity:0.52571429;fill:#6e6e6e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
-       inkscape:export-filename="/home/jimmac/checkout/gnome/adwaita-icon-theme/src/cursors/pngs/96x96/context-menu.png"
+       inkscape:export-filename="/home/jimmac/checkout/gnome/adwaita-icon-theme-ubuntu/src/cursors/pngs/96x96/context-menu.png"
        inkscape:export-xdpi="360"
        inkscape:export-ydpi="360" />
     <rect
@@ -16933,7 +16933,7 @@
        x="362"
        y="115"
        inkscape:label="#rect4642"
-       inkscape:export-filename="/home/jimmac/checkout/gnome/adwaita-icon-theme/src/cursors/pngs/64x64/dnd-no-drop.png"
+       inkscape:export-filename="/home/jimmac/checkout/gnome/adwaita-icon-theme-ubuntu/src/cursors/pngs/64x64/dnd-no-drop.png"
        inkscape:export-xdpi="240"
        inkscape:export-ydpi="240" />
   </g>

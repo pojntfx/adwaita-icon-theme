@@ -4,21 +4,21 @@ SUBDIRS = src win32
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-cursordir = $(datadir)/icons/Adwaita/cursors
+cursordir = $(datadir)/icons/Adwaita-Ubuntu/cursors
 
 # Install .cur/.ani on Windows and X cursors everywhere else
-win_cursors = $(wildcard $(srcdir)/Adwaita/cursors/*.cur) $(wildcard $(srcdir)/Adwaita/cursors/*.ani)
+win_cursors = $(wildcard $(srcdir)/Adwaita-Ubuntu/cursors/*.cur) $(wildcard $(srcdir)/Adwaita-Ubuntu/cursors/*.ani)
 if PLATFORM_WIN32
 cursor_DATA = $(win_cursors)
 else
-cursor_DATA = $(filter-out $(win_cursors), $(wildcard $(srcdir)/Adwaita/cursors/*))
+cursor_DATA = $(filter-out $(win_cursors), $(wildcard $(srcdir)/Adwaita-Ubuntu/cursors/*))
 endif
 
 if ENABLE_L_XL_VARIANTS
-cursorldir = $(datadir)/icons/Adwaita-Large/cursors
-cursorl_DATA = $(wildcard $(srcdir)/Adwaita-Large/cursors/*)
-cursorxldir = $(datadir)/icons/Adwaita-ExtraLarge/cursors
-cursorxl_DATA = $(wildcard $(srcdir)/Adwaita-ExtraLarge/cursors/*)
+cursorldir = $(datadir)/icons/Adwaita-Ubuntu-Large/cursors
+cursorl_DATA = $(wildcard $(srcdir)/Adwaita-Ubuntu-Large/cursors/*)
+cursorxldir = $(datadir)/icons/Adwaita-Ubuntu-ExtraLarge/cursors
+cursorxl_DATA = $(wildcard $(srcdir)/Adwaita-Ubuntu-ExtraLarge/cursors/*)
 else
 cursorldir =
 cursorl_DATA =
@@ -32,7 +32,7 @@ theme_DATA = $(theme_in_files:.theme.in=.theme)
 THEME_DIRS=$(shell SIZES="$(install_sizes)"; for size in $$SIZES; do for dir in `find $(srcdir)/$(SVGOUTDIR)/$$size/* -type d`; do printf "$$dir,"; done; done; echo "scalable/actions,scalable/apps,scalable/categories,scalable/devices,scalable/emblems,scalable/emotes,scalable/mimetypes,scalable/places,scalable/status,scalable-up-to-32/status,")
 
 %.theme: %.theme.in $(SVGOUTDIR) Makefile
-	dirs="`echo $(THEME_DIRS) | sed -e 's#$(srcdir)/Adwaita/##g'`"; \
+	dirs="`echo $(THEME_DIRS) | sed -e 's#$(srcdir)/Adwaita-Ubuntu/##g'`"; \
 	sed -e "s|\@THEME_DIRS\@|$$dirs|g" < $< > $@; \
 	for dir in `echo $$dirs | sed -e "s/,/ /g"`; do \
 		sizefull="`dirname $$dir`"; \
@@ -214,11 +214,11 @@ uninstall-hook:
 	@rm -f  $(DESTDIR)$(themedir)/icon-theme.cache
 
 pkgconfigdir = $(datadir)/pkgconfig
-pkgconfig_DATA = adwaita-icon-theme.pc
+pkgconfig_DATA = adwaita-icon-theme-ubuntu.pc
 
 EXTRA_DIST =			\
-	adwaita-icon-theme.pc.in  \
-	Adwaita			\
+	adwaita-icon-theme-ubuntu.pc.in  \
+	Adwaita-Ubuntu			\
 	COPYING_CCBYSA3		\
 	COPYING_LGPL		\
 	$(theme_in_files)

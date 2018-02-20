@@ -1,6 +1,6 @@
 As some file decompression utilities have problems resolving UNIX symlink files,
-please check whether there are any 0-size files in Adwaita/scalable and/or
-Adwaita/cursors.  If there are, there is a good chance that you are affected by
+please check whether there are any 0-size files in Adwaita-Ubuntu/scalable and/or
+Adwaita-Ubuntu/cursors.  If there are, there is a good chance that you are affected by
 this problem.  Delete the whole folder tree and try again, note that the following
 utilities are known to work correctly:
 - Latest stable version of 7-zip (version 15.14 at time of writing)
@@ -41,7 +41,7 @@ generated index.theme, as well as all the icon and cursor files into
 $(PREFIX)\share\icons, and process them if the optional tools are found, so
 that the icons will be ready for use by GTK+-using applications.
 A 'clean' target is provided to remove all the generated files-to uninstall
-the installed icons, simply delete the $(PREFIX)\share\icons\Adwaita folder.
+the installed icons, simply delete the $(PREFIX)\share\icons\Adwaita-Ubuntu folder.
 
 Please refer to the README.txt file in $(GLib_src_root)\win32\vs<Visual Studio Version>
 on how to build GLib using your version of Visual Studio.  Versions 2008 through 2015 are
@@ -50,10 +50,10 @@ currently supported.
 Set up the source tree as follows under some arbitrary top
 folder <root>:
 
-<root>\<this-adwaita-icon-theme-source-tree>
+<root>\<this-adwaita-icon-theme-ubuntu-source-tree>
 <root>\<Visual Studio Version>\<PlatformName>
 
 *this* file you are now reading is thus located at
-<root>\<this-adwaita-icon-theme-source-tree>\win32\README.txt
+<root>\<this-adwaita-icon-theme-ubuntu-source-tree>\win32\README.txt
 
 --Chun-wei Fan <fanc999@gmail.com>
